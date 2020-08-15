@@ -32,11 +32,10 @@ box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.75);
 .kafelek > h3 {
     position: absolute;
     bottom: -10px;
-    height: 30px;
+    height: auto;
     width: 100%;
     border-radius: 0px 0px 10px 10px;
-
-
+    padding-bottom: 5px;
 
     color: white;
     text-align: center;
@@ -81,6 +80,19 @@ box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.75);
     font-weight: bold;
     color: black;
 }
+/* end index.html*/
+
+/* start article_display.html*/
+header{
+    background-color: beige;
+    margin: 0px -15px 0px -15px;
+    height: 300px;
+}
+
+header > span {
+    bottom: 20px;
+}
+
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
