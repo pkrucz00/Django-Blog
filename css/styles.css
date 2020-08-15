@@ -93,6 +93,33 @@ header > span {
     bottom: 20px;
 }
 
+.article-elem {
+
+    color: black;
+    min-height: 200px;
+    border-radius: 15px;
+
+    background: rgba(76, 175, 80, 0.7) /* Green background with 30% opacity */
+
+}
+
+.article-elem:hover{
+    color: black;
+    background: rgba(76, 175, 80, 1);
+    text-decoration: none;
+}
+.article-elem > .col-7 {
+    opacity: 1;
+}
+
+.article-elem img{
+    margin-bottom: auto;
+    margin-top: auto;
+    border-radius: 50%;
+    border: 2px;
+    max-width: 100%;
+    height: auto;
+}
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
