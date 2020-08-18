@@ -1,11 +1,13 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title> Title </title>
-    <link rel="stylesheet" href="../static/vendors/css/bootstrap-min.css">
-    <link rel="stylesheet" href="../static/sources/css/styles.css">
+    <link type="text/css" rel="stylesheet" href="{% static "vendors/css/bootstrap-min.css" %}">
+    <link type="text/css" rel="stylesheet" href="{% static "sources/css/styles.css" %}">
 
     <script src="https://kit.fontawesome.com/270602e4bd.js" crossorigin="anonymous"></script>
 </head>
@@ -55,7 +57,7 @@
     <div class="card-footer mx-lg-5 my-5" id="author-info">
         <div class="row">
             <div class="col-4 col-md-3" href="#">
-                <img class="img-fluid" src="../media/1-intro-photo-final.jpg">
+                <img class="img-fluid" src="{% static 'sources/img/1-intro-photo-final.jpg'%}">
             </div> <!-- zdjęcie twórcy artykułu - miniatura -->
             <div class="col-8 col-md-9">
                 <h3><a href="#">Imię i nazwisko</a></h3>
@@ -74,9 +76,9 @@
 
 
 
-<script src="../static/vendors/js/jquery-min.js"></script>
-<script src="../static/vendors/js/popper.js" ></script>
-<script src="../static/vendors/js/bootstrap-js.js"></script>
-<script src="../static/vendors/js/script.js"></script>
+<script src="{% static 'vendors/js/jquery-min.js' %}"></script>
+<script src="{% static 'vendors/js/popper.js' %}"></script>
+<script src="{% static 'vendors/js/bootstrap-js.js' %}"></script>
+<script src="{% static 'vendors/js/script.js' %}"></script>
 </body>
 </html>
