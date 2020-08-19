@@ -1,0 +1,15 @@
+{% load static %}
+
+        <div class="col-lg-6 p-3">
+            <a href="{% url 'article display' article.id %}" class="d-block article-elem">
+                <div class="row p-3">
+                    <div class="col-7 p-3">
+                        <h3 class="text-decoration-none">{{ article.title }}</h3>
+                        <p class="text-decoration-none text-justify"> {{ article.headline }}</p>
+                    </div>
+                    <div class="col-5 p-0">
+                        <img class="img-thumbnail" src="{{ article.image.url }}" alt="Obrazek do artykułu" height="300px">
+                    </div>
+                </div>
+            </a>
+        </div>
