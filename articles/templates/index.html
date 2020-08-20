@@ -1,41 +1,24 @@
 {% extends "base.html" %}
 
 {% block content_wrapper %}
-
     <main role="main" id="main-page-container">
         <div class="container-fluid mt-3">
             <div class="row">
                 <div class="col-lg-9">
-                    <a class="jumbotron" href="articles/article_display.html">
-                        <h2>Duża historia</h2>
-                        <p class="jimbo-desc">Zobacz, co to się stało strasznego. Duzo, dużo, dużo tekstu Zobacz, co to się stało strasznego. Duzo, dużo, dużo tekstu Zobacz, co to się stało strasznego. Duzo, dużo, dużo tekstu Zobacz, co to się stało strasznego. Duzo, dużo, dużo tekstu</p>
+                {% for article in articles %}
+                    {% if forloop.first %}
+                    <a class="jumbotron col-12 position-relative " href="{% url "article display" article.id %}"
+                        style="background-image: url({{ article.image.url }})" id="main-jumbo">
+                        <div class="jumbotron-fill p-3">
+                            <h2 class="d-block">{{ article.title }}</h2>
+                            <p class="jumbo-desc">{{ article.headline }}</p>
+                        </div>
                     </a>
                     <div class="row">
-                        <div class="col-md-6 p-3">
-                            <a class="kafelek" href="articles/article_display.html">
-                                <h3>Kafelek 1</h3>
-                            </a>
-                        </div>
-                        <div class="col-md-6 p-3">
-                            <a class="kafelek" href="articles/article_display.html">
-                                <h3>Kafelek 2</h3>
-                            </a>
-                        </div>
-                        <div class="col-md-6 p-3">
-                            <a class="kafelek" href="articles/article_display.html">
-                                <h3>Kafelek 3</h3>
-                            </a>
-                        </div>
-                        <div class="col-md-6 p-3">
-                            <a class="kafelek" href="articles/article_display.html">
-                                <h3>Kafelek 4</h3>
-                            </a>
-                        </div>
-                        <div class="col-md-6 p-3">
-                            <a class="kafelek" href="articles/article_display.html">
-                                <h3>Kafelek 5</h3>
-                            </a>
-                        </div>
+                    {% else %}
+                        {% include "components/kafelek.html" %}
+                    {% endif %}
+                {% endfor %}
                     </div>
                 </div>
                 <div class="col-lg-3 align-self-end align-self-lg-auto">
@@ -52,6 +35,3 @@
 
 
 {% endblock %}
-
-</body>
-</html>

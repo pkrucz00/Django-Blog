@@ -3,14 +3,14 @@
 {% load static %}
 
 {% block content_wrapper %}
-    <div class="row">
+    <div class="row p-3">
 
         {% for article in articles %}
 
             {% include "components/article_tile.html" %}
 
         {% endfor %}
-                <div class="col-lg-6 p-3">
+        <div class="col-lg-6 p-3">
             <a href="article_display.html" class="d-block article-elem">
                 <div class="row p-3">
                     <div class="col-7 p-3">
@@ -21,7 +21,7 @@
                         Blah blah blah blah. Blah blah blah blah.</p>
                     </div>
                     <div class="col-5 p-0">
-                        <img src="{% static "sources/img/93539.jpg" %}" alt="Obrazek do artykułu">
+                        <img src="{% static "sources/../../../media/img/../../../media/93539.jpg" %}" alt="Obrazek do artykułu">
                     </div>
                 </div>
             </a>
@@ -37,7 +37,7 @@
                         Blah blah blah blah. Blah blah blah blah.</p>
                     </div>
                     <div class="col-5 p-0">
-                        <img src="{% static "sources/img/93539.jpg" %}" alt="Obrazek do artykułu">
+                        <img src="{% static "sources/../../../media/img/../../../media/93539.jpg" %}" alt="Obrazek do artykułu">
                     </div>
                 </div>
             </a>
@@ -53,12 +53,12 @@
                         Blah blah blah blah. Blah blah blah blah.</p>
                     </div>
                     <div class="col-5 p-0" >
-                        <img src="{% static "sources/img/93539.jpg" %}" alt="Obrazek do artykułu">
+                        <img src="{% static "sources/../../../media/img/../../../media/93539.jpg" %}" alt="Obrazek do artykułu">
                     </div>
                 </div>
             </a>
         </div>
-                <div class="col-lg-6 p-3">
+        <div class="col-lg-6 p-3">
             <a href="article_display.html" class="d-block article-elem">
                 <div class="row p-3">
                     <div class="col-7 p-3">
@@ -69,7 +69,7 @@
                         Blah blah blah blah. Blah blah blah blah.</p>
                     </div>
                     <div class="col-5 p-0">
-                        <img src="{% static "sources/img/93539.jpg" %}" alt="Obrazek do artykułu">
+                        <img src="{% static "sources/../../../media/img/../../../media/93539.jpg" %}" alt="Obrazek do artykułu">
                     </div>
                 </div>
             </a>

@@ -14,8 +14,9 @@ class Article(models.Model):
         return "Article: " + self.title
 
     class Meta:
-        ordering = ["title", "headline"]
+        ordering = ["published_at", "title"]
         verbose_name = "Artykuł"
+        verbose_name_plural = "Artykuły"
 
 
 class Author(models.Model):
@@ -30,6 +31,7 @@ class Author(models.Model):
     class Meta:
         ordering = ["firstName", "lastName"]
         verbose_name = "Autor"
+        verbose_name_plural = "Autorzy"
 
 
 class Category(models.Model):
@@ -37,4 +39,9 @@ class Category(models.Model):
 
     def __str__(self):
         return "Category: " + self.name
+
+    class Meta:
+        ordering = ["name"]
+        verbose_name = "Kategoria"
+        verbose_name_plural = "Kategorie"
 

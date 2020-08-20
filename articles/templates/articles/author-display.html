@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block content_wrapper %}
+    <div class="container align-self-center">
+        <div class="jumbotron col-12">
+            <div class="row">
+                <div class="col-4 col-md-3" href="#">
+                    <img class="img-fluid" src="{{ author.image.url }}" alt="U are smart">
+                </div> <!-- zdjęcie twórcy artykułu - miniatura -->
+                <div class="col-8 col-md-9">
+                    <h3>{{ author.firstName|add:" "|add:author.lastName }}</h3>
+                    <p> {{ author.about }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="text-center">Moje artykuły</h2>
+    <div class="container mt-3">
+        <div class="row">
+            {% for article in articles %}
+
+                {% include "components/article_tile.html" %}
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

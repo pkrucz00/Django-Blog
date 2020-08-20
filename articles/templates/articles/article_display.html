@@ -1,26 +1,27 @@
 {% extends "base.html" %}
 
 {% load static %}
-
 {% block content_wrapper %}
 <article class="container-fluid p-3">
     <header class="card-header position-relative" id="article-head">
         <h1 class="text-center ">{{ article.title }}</h1>
-        <h2 class="text-justify my-4 m-lg-5">{{ article.headline }}</h2>
+        <h2 class="text-justify my-5 m-lg-5 ">{{ article.headline }}</h2>
         <span class="mx-lg-5 position-absolute">{{ article.published_at }}</span>
     </header>
-    <div class="mx-lg-5 my-5 text-justify" > {{ article.text }} </div>
+    <div class="mx-lg-5 my-5 text-justify" > {{ article.text | linebreaks }} </div>
 </article>
 
 <div class="container">
     <div class="card-footer mx-lg-5 my-5" id="author-info">
         <div class="row">
-            <div class="col-4 col-md-3" href="#">
-                <img class="img-fluid" src="{% static 'sources/img/1-intro-photo-final.jpg' %}">
-            </div> <!-- zdjęcie twórcy artykułu - miniatura -->
+            <div class="col-4 col-md-3"> <!-- zdjęcie twórcy artykułu - miniatura -->
+                <a class="no-link-decoration" href="{% url "author display" author.id %}">
+                    <img class="img-fluid" src="{{ author.image.url }}" alt="U are smart">
+                </a>
+            </div>
             <div class="col-8 col-md-9">
-                <h3><a href="#">Imię i nazwisko</a></h3>
-                <p> Mały, skromny i przyjazny środowisku facet, który lubi małe kotki, tortury i pieczenie ciasteczek</p>
+                <h3 ><a class="no-link-decoration" href="{% url "author display" author.id %}">{{ author.firstName|add:" "|add:author.lastName }}</a></h3>
+                <p> {{ author.about }}</p>
             </div>
         </div>
 

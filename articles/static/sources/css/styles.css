@@ -3,6 +3,17 @@ body {
     font-family: "Trebuchet MS", sans-serif;
 }
 
+.no-link-decoration{
+    text-decoration: none;
+    color: black;
+}
+
+.no-link-decoration:hover{
+    text-decoration: none;
+    color:black;
+    animation: ease;
+}
+/* index -- start */
 #tag-container{
     background-color: white;
     height: 200px;
@@ -23,6 +34,7 @@ body {
     position: relative;
     margin: auto;
     background-color: beige;
+    background-size: cover;
     display: inline-block;
     height: 200px;
     width: 100%;
@@ -38,7 +50,7 @@ box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.75);
     bottom: -10px;
     height: auto;
     width: 100%;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0 0 10px 10px;
     padding-bottom: 5px;
 
     color: white;
@@ -62,16 +74,31 @@ box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.75);
     text-decoration: none;
     border-radius: 20px;
     display: inline-block;
+
+    background-size: cover;
+    transition: 0.5s;
 }
 
-.jumbotron:hover{
+#main-jumbo:hover{
     text-decoration: none;
+    color: black;
+    border: white 5px;
+
+    -webkit-box-shadow: 10px 10px 15px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 15px 5px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 15px 5px rgba(0,0,0,0.75);
+
+
 
 }
-.jimbo-desc{
+.jumbotron-fill {
+    background: rgba(256,256,256,.7);
+    border-radius: 15px;
+}
+.jumbo-desc{
     text-align: center;
-
 }
+
 
 .footer{
     background-color: white;
@@ -90,8 +117,12 @@ box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.75);
 /* start article_display.html*/
 header{
     background-color: beige;
-    margin: 0px -15px 0px -15px;
-    height: 300px;
+    margin: 0 -15px 0 -15px;
+    min-height: 300px;
+}
+
+header > h2 {
+    font-size: 1.5em;
 }
 
 header > span {
@@ -119,12 +150,10 @@ header > span {
 }
 
 .article-elem img{
-    margin-bottom: auto;
-    margin-top: auto;
     border-radius: 50%;
-    border: 2px;
-    max-width: 100%;
-    height: auto;
+    border: 2px black;
+    max-width: 90%;
+    max-height: 200px;
 }
 
 
@@ -141,11 +170,14 @@ header > span {
     #tag-container {
         height: 580px;
     }
+    header > h2 {
+        font-size: 2em;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    .jimbo-desc{
+    .jumbo-desc{
         text-align: justify;
         width: 50%;
     }
