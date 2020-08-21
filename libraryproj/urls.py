@@ -37,4 +37,6 @@ urlpatterns = [
     path('categories/<int:category_id>', views.list_single_category, name='category display'),
 
     path('author/<int:author_id>', views.author_display, name='author display'),
+
+    path("search", views.search, name="search"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

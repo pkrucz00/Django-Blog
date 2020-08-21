@@ -19,25 +19,25 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">About</a>
             </li>
         </ul>
-        <form class="form-inline my-2 mx-md-0 mx-5 my-lg-0">
-            <input class="form-control mr-0 mr-sm-1 ml-auto" id="search-bar" type="search" placeholder="Search" aria-label="Search" >
-            <button class="btn btn-outline-success my-2 my-sm-0 ml-auto ml-sm-1 mr-auto" type="submit"><i class="fas fa-search"></i></button>
+        <form class="form-inline my-2 mx-md-0 mx-5 my-lg-0" action="{% url "search" %}" method="get">
+            <input class="form-control mr-0 mr-sm-1 ml-auto" id="search-bar" type="text"
+                   placeholder="Szukaj..." name="q" aria-label="Search" >
+            <button class="btn btn-outline-success my-2 my-sm-0 ml-auto ml-sm-1 mr-auto" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
         </form>
     <span class="d-flex align-items-center justify-content-center mx-auto ml-lg-3 mr-lg-1">
     {% if request.user.is_authenticated %}
         <a class="btn btn-primary mx-auto mx-lg-2" href="{% url "logout" %}" role="button">Wyloguj się</a>
-
     {% else %}
-
-            <div>
-                <a class="btn btn-secondary" href="{% url "login" %}" role="button">
-                    Zaloguj się
-                </a>
-                <a class="btn btn-primary" href="{% url "user_signup" %}" role="button">
-                    Zarejestruj się
-                </a>
-            </div>
-
+        <div>
+            <a class="btn btn-secondary" href="{% url "login" %}" role="button">
+                Zaloguj się
+            </a>
+            <a class="btn btn-primary" href="{% url "user_signup" %}" role="button">
+                Zarejestruj się
+            </a>
+        </div>
     {% endif %}
      </span>
     </div>

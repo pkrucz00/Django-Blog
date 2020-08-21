@@ -135,16 +135,16 @@ header > span {
     color: black;
     min-height: 200px;
     border-radius: 15px;
-    transition: 0.3s;
+    transition: background 0.3s, border 0.5s;
     background: rgba(76, 175, 80, 0.7);
 
 }
 
 .article-elem:hover{
-    color: black;
     background: rgba(76, 175, 80, 1);
-    text-decoration: none;
 }
+
+
 .article-elem > .col-7 {
     opacity: 1;
 }

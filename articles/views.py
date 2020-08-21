@@ -53,3 +53,12 @@ def user_signup(request):
 def logout(request):
     logout(request)
     return render(request, template_name="registration/logged_out.html")
+
+def search(request):
+    query = request.GET.get("q")
+    if query:
+        article_results = Article.objects.filter(title__icontains=query)
+    else:
+        article_results = []
+    return render(request, template_name="articles/search_results.html",
+                  context={"articles": article_results})
