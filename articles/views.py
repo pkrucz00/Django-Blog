@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import logout
 
 from articles.models import Article, Author, Category
 
@@ -9,7 +11,7 @@ def hello_world(request):
 
 def list_articles(request):
     articles = Article.objects.all().order_by("-published_at")
-    return render(request, template_name="articles/article-list.html", context={"articles":articles})
+    return render(request, template_name="articles/article_list.html", context={"articles":articles})
 
 def display_article(request, article_id):
     article = Article.objects.get(id=article_id)
@@ -19,15 +21,35 @@ def display_article(request, article_id):
 
 def list_categories(request):
     categories = Category.objects.all()
-    return render(request, template_name="articles/category-list.html", context={"categories": categories})
+    return render(request, template_name="articles/category_list.html", context={"categories": categories})
 
 def list_single_category(request, category_id):
     articles = Article.objects.filter(categoryID=category_id)
-    return render(request, template_name="articles/article-list.html", context={"articles":articles})
+    return render(request, template_name="articles/article_list.html", context={"articles":articles})
 
 def author_display(request, author_id):
     author= Author.objects.get(id = author_id)
     articles = Article.objects.filter(AuthorID=author_id)
-    return render(request, template_name="articles/author-display.html",
+    return render(request, template_name="articles/author_display.html",
                   context={"author": author, "articles": articles})
 
+def profile_view(request):
+    return render(request, template_name="registration/log_in_greeting.html")
+
+
+def user_signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, template_name="registration/signup_complete.html")
+    else:
+        # tutaj obsługujemy przypadek kiedy użytkownik pierwszy raz wyświetlił stronę
+        form = UserCreationForm()
+
+    # na końcu zwracamy wyrenderowanego HTMLa
+    return render(request, template_name="registration/signup_form.html", context={'form': form})
+
+def logout(request):
+    logout(request)
+    return render(request, template_name="registration/logged_out.html")

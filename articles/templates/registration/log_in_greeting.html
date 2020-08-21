@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1> Witaj {{ request.user.username }}</h1>
+    <p>  Ostatnio zalogowałeś się u nas {{ request.user.last_login }}</p>
+    <div class="text-center m-4">
+        <a class="btn btn-primary" href="{% url "index" %}" role="button">Strona główna</a>
+    </div>
+{% endblock %}

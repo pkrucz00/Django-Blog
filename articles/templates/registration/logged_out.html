@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Dziękujemy za wylogowanie się z naszej strony!</h1>
+    <p>I mamy nadzieję, że do nas wrócisz ;)</p>
+    <br>
+    <a href="{% url 'login' %}" class="btn btn-success">Zaloguj się</a>
+    <a href="{% url 'index' %}" class="btn btn-primary">Strona główna</a>
+{% endblock %}
